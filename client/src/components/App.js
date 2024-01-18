@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Router } from "react-router-dom";
 
 import jwt_decode from "jwt-decode";
 
 import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
+import NavBar from "./modules/NavBar.js";
+import Home from "./pages/Home.js";
+import Learn from "./pages/Learn.js";
+import Blend from "./pages/Blend.js";
+import Play from "./pages/Play.js";
+import Profile from "./pages/Profile.js";
 
 import "../utilities.css";
 
@@ -43,20 +49,27 @@ const App = () => {
   };
 
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <Skeleton
-            path="/"
-            handleLogin={handleLogin}
-            handleLogout={handleLogout}
-            userId={userId}
-          />
-        }
-      />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    <>
+      <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/learn" element={<Learn />} /> */}
+          {/* <Route path="/blend" element={<Blend path="/blend" />}></Route>
+          <Route path="/play" element={<Play path="/play" />}></Route>
+          <Route path="/profile" element={<Profile path="/profile" />}></Route> */}
+          {/* <Route path="*" element={<NotFound />}></Route> */}
+        </Routes>
+        {/* <Routes>
+          <Home path="/" />
+          <Learn path="/learn" />
+          <Blend path="/blend" />
+          <Play path="/play" />
+          <Profile path="/profile/:userId" />
+          <NotFound default />
+        </Routes> */}
+      </div>
+    </>
   );
 };
 
