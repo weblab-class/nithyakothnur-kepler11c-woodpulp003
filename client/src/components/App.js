@@ -51,16 +51,16 @@ const App = () => {
   return (
     <>
       <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
-      <div>
+      {/* <div>
         <Routes>
-          <Route path="/" element={<Home />} />
-          {/* <Route path="/learn" element={<Learn />} /> */}
-          {/* <Route path="/blend" element={<Blend path="/blend" />}></Route>
+          <Route path="/" element={<Home />} /> */}
+      {/* <Route path="/learn" element={<Learn />} /> */}
+      {/* <Route path="/blend" element={<Blend path="/blend" />}></Route>
           <Route path="/play" element={<Play path="/play" />}></Route>
           <Route path="/profile" element={<Profile path="/profile" />}></Route> */}
-          {/* <Route path="*" element={<NotFound />}></Route> */}
-        </Routes>
-        {/* <Routes>
+      {/* <Route path="*" element={<NotFound />}></Route> */}
+      {/* </Routes> */}
+      {/* <Routes>
           <Home path="/" />
           <Learn path="/learn" />
           <Blend path="/blend" />
@@ -68,7 +68,7 @@ const App = () => {
           <Profile path="/profile/:userId" />
           <NotFound default />
         </Routes> */}
-      </div>
+      {/* // </div> */}
     </>
   );
 };
