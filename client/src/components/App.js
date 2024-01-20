@@ -23,21 +23,23 @@ import { get, post } from "../utilities";
  */
 const App = () => {
   const [userId, setUserId] = useState(undefined);
+  const [decodedName, setDecodedName] = useState(undefined);
 
   useEffect(() => {
     get("/api/whoami").then((user) => {
       if (user._id) {
         // they are registed in the database, and currently logged in.
         setUserId(user._id);
+        setDecodedName(user.name);
       }
     });
   }, []);
 
   const handleLogin = (credentialResponse) => {
-
     const userToken = credentialResponse.credential;
     const decodedCredential = jwt_decode(userToken);
     console.log(`Logged in as ${decodedCredential.name}`);
+    setDecodedName(decodedCredential.name);
     post("/api/login", { token: userToken }).then((user) => {
       setUserId(user._id);
       post("/api/initsocket", { socketid: socket.id });
@@ -55,7 +57,12 @@ const App = () => {
   return (
     <>
       {/* <h1></h1> */}
-      <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
+      <NavBar
+        handleLogin={handleLogin}
+        handleLogout={handleLogout}
+        userId={userId}
+        decodedName={decodedName}
+      />
       {/* <div>
         <Routes>
           <Route path="/" element={<Home />} /> */}
