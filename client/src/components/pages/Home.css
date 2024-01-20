@@ -5,3 +5,29 @@
   border-bottom: 3px solid;
   border-top: 3px solid;
 }
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.block {
+    max-width: 30%;
+}
+
+.main-title {
+  font-size: 30px;
+}
+
+.NavBar-link,
+.NavBar-link:visited {
+  color: var(--white);
+  opacity: 0.8;
+  text-decoration: none;
+  margin: var(--m);
+}
+
+.NavBar-link:hover {
+  opacity: 1;
+}
