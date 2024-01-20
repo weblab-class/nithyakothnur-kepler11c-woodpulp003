@@ -34,6 +34,7 @@ const App = () => {
   }, []);
 
   const handleLogin = (credentialResponse) => {
+
     const userToken = credentialResponse.credential;
     const decodedCredential = jwt_decode(userToken);
     console.log(`Logged in as ${decodedCredential.name}`);
@@ -45,22 +46,26 @@ const App = () => {
 
   const handleLogout = () => {
     setUserId(undefined);
+    console.log("LOGGIN OUT");
     post("/api/logout");
   };
 
+  // console.log("testing");
+
   return (
     <>
+      {/* <h1></h1> */}
       <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
-      <div>
+      {/* <div>
         <Routes>
-          <Route path="/" element={<Home />} />
-          {/* <Route path="/learn" element={<Learn />} /> */}
-          {/* <Route path="/blend" element={<Blend path="/blend" />}></Route>
+          <Route path="/" element={<Home />} /> */}
+      {/* <Route path="/learn" element={<Learn />} /> */}
+      {/* <Route path="/blend" element={<Blend path="/blend" />}></Route>
           <Route path="/play" element={<Play path="/play" />}></Route>
           <Route path="/profile" element={<Profile path="/profile" />}></Route> */}
-          {/* <Route path="*" element={<NotFound />}></Route> */}
-        </Routes>
-        {/* <Routes>
+      {/* <Route path="*" element={<NotFound />}></Route> */}
+      {/* </Routes> */}
+      {/* <Routes>
           <Home path="/" />
           <Learn path="/learn" />
           <Blend path="/blend" />
@@ -68,7 +73,7 @@ const App = () => {
           <Profile path="/profile/:userId" />
           <NotFound default />
         </Routes> */}
-      </div>
+      {/* </div> */}
     </>
   );
 };
