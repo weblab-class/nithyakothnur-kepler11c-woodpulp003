@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route, Router } from "react-router-dom";
+import { Routes, Route, Router, BrowserRouter } from "react-router-dom";
 
 import jwt_decode from "jwt-decode";
 
@@ -49,8 +49,16 @@ const App = () => {
   };
 
   return (
-    <>
+    <BrowserRouter>
       <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
+      <Routes>
+        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/learn" element={<Learn />} />
+        {/* <Route path="/blend" element={<Blend />} /> */}
+        {/* <Route path="/play" element={<Play />} /> */}
+        {/* <Route path="/profile" element={<Profile />} /> */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
       {/* <div>
         <Routes> */}
       {/* <Route path="/" element={<Home />} /> */}
@@ -69,7 +77,7 @@ const App = () => {
           <NotFound default />
         </Routes> */}
       {/* // </div> */}
-    </>
+    </BrowserRouter>
   );
 };
 

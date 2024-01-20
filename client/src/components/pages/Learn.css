@@ -1,0 +1,17 @@
+.content {
+  position: -webkit-sticky;
+  top: 78px;
+  left: 0;
+}
+
+.sidebar {
+  z-index: 1;
+  border-right: 1px solid blue;
+}
+
+#sidebar {
+  padding: 40px;
+}
+.learnCard {
+  display: flex;
+}
