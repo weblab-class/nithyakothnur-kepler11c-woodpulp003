@@ -59,6 +59,7 @@ const App = () => {
         {/* <Route path="/profile" element={<Profile />} /> */}
         <Route path="*" element={<NotFound />} />
       </Routes>
+
       {/* <div>
         <Routes> */}
       {/* <Route path="/" element={<Home />} /> */}
@@ -66,6 +67,7 @@ const App = () => {
       {/* <Route path="/blend" element={<Blend path="/blend" />}></Route>
           <Route path="/play" element={<Play path="/play" />}></Route>
           <Route path="/profile" element={<Profile path="/profile" />}></Route> */}
+
       {/* <Route path="*" element={<NotFound />}></Route>
         </Routes>
         {/* <Routes>
@@ -77,6 +79,7 @@ const App = () => {
           <NotFound default />
         </Routes> */}
       {/* // </div> */}
+
     </BrowserRouter>
   );
 };

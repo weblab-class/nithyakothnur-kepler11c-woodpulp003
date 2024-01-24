@@ -18,12 +18,12 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 :root {
-  --primary: #0B1440;
+  --primary: #0b1440;
   --primary--dim: #6987db;
   --darkgrey: #d4d4d4;
   --medgrey: #e0e0e0;
   --grey: #f7f7f7;
-  --white: #FFFFFF;
+  --white: #ffffff;
 
   --xs: 4px;
   --s: 8px;
@@ -35,8 +35,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
-  font-weight: 300;
+  font-weight: 700;
+  background-color: var(--primary);
+  color: var(--white);
 }
+
 
 form {
   flex-grow: 1;
