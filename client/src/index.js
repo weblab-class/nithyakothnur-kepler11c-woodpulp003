@@ -11,6 +11,7 @@ import NewBlend from "./components/pages/NewBlend.js";
 const container = document.getElementById("root");
 const root = createRoot(container);
 
+
 root.render(<App />);
 
 // allows for live updating

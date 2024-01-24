@@ -23,14 +23,12 @@ import { get, post } from "../utilities";
  */
 const App = () => {
   const [userId, setUserId] = useState(undefined);
-  const [decodedName, setDecodedName] = useState(undefined);
 
   useEffect(() => {
     get("/api/whoami").then((user) => {
       if (user._id) {
         // they are registed in the database, and currently logged in.
         setUserId(user._id);
-        setDecodedName(user.name);
       }
     });
   }, []);
@@ -39,7 +37,6 @@ const App = () => {
     const userToken = credentialResponse.credential;
     const decodedCredential = jwt_decode(userToken);
     console.log(`Logged in as ${decodedCredential.name}`);
-    setDecodedName(decodedCredential.name);
     post("/api/login", { token: userToken }).then((user) => {
       setUserId(user._id);
       post("/api/initsocket", { socketid: socket.id });
@@ -52,15 +49,13 @@ const App = () => {
   };
 
   return (
-
     <BrowserRouter>
       <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
-          Route path="/" element={<Home />} 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/learn" element={<Learn />} />
+        {/* <Route path="/" element={<Home />} /> */}
+        {/* <Route path="/learn" element={<Learn />} /> */}
         {/* <Route path="/blend" element={<Blend />} /> */}
-        {/* <Route path="/play" element={<Play />} /> */}
+        <Route path="/play" element={<Play />} />
         {/* <Route path="/profile" element={<Profile />} /> */}
         <Route path="*" element={<NotFound />} />
       </Routes>
