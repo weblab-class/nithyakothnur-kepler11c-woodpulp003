@@ -29,6 +29,7 @@
     "jwt-decode": "^3.1.2",
     "mongoose": "^6.9.0",
     "nodemon": "^2.0.6",
+    "qwerty-hancock": "^0.10.0",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
@@ -36,6 +37,7 @@
     "react-scroll": "^1.9.0",
     "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.1",
+    "tone": "^14.7.77",
     "url-loader": "^4.1.1"
   },
   "devDependencies": {

@@ -1,28 +1,44 @@
 .NavBar-container {
-  padding: var(--s) var(--m);
   background-color: var(--primary);
+  padding: var(--s) var(--m);
 }
 
-.NavBar-title {
-  color: var(--white);
-  font-size: 20px;
+.NavBar-left {
+  justify-self: flex-start;
+  display: flex;
+}
+
+.NavBar-right {
+  justify-self: flex-end;
+  display: flex;
+  align-items: center;
 }
 
 .NavBar-linkContainer {
-  margin-left: var(--l);
+  color: var(--white);
+  font-weight: 700;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .NavBar-link,
 .NavBar-link:visited {
   color: var(--white);
-  opacity: 0.6;
+  opacity: 0.8;
   text-decoration: none;
+  margin: var(--m);
 }
 
 .NavBar-link:hover {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .NavBar-link + .NavBar-link {
-  margin-left: var(--m);
+  justify-content: center;
+  margin: var(--m);
+}
+
+.name {
+  margin: var(--m);
 }
