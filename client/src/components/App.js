@@ -52,9 +52,9 @@ const App = () => {
     <BrowserRouter>
       <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
-        {/* <Route path="/learn" element={<Learn />} /> */}
-        {/* <Route path="/blend" element={<Blend />} /> */}
+        <Route path="/" element={<Home />} />
+        <Route path="/learn" element={<Learn />} />
+        <Route path="/blend" element={<Blend />} />
         <Route path="/play" element={<Play />} />
         {/* <Route path="/profile" element={<Profile />} /> */}
         <Route path="*" element={<NotFound />} />
