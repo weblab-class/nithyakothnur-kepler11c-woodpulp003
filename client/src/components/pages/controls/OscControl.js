@@ -1,9 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { CTX } from "../context/Store";
 
 const Osc1 = () => {
   const [appState, updateState] = useContext(CTX);
-  const [custom, setCustom] = useState(false);
   let { type, detune } = appState.osc1Settings;
 
   const change = (e) => {
@@ -39,9 +38,6 @@ const Osc1 = () => {
         <button id="sawtooth" onClick={changeType} className={`${type === "sawtooth" && "active"}`}>
           sawtooth
         </button>
-        {/* <button id="custom" onClick={changeType} className={`${type === "custom" && "active"}`}>
-          custom
-        </button> */}
       </div>
     </div>
   );
