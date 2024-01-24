@@ -31,6 +31,12 @@
   }
   .active {
     background: lightgreen;
-    color: white;
+    color: rgb(36, 152, 236);
   }
+}
+
+.keyboard {
+  margin-left: 50%;
+  transform: translateX(-50%);
+  width: 449px;
 }

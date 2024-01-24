@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { CTX } from "../context/Store";
 
-const Osc1 = ({ change, settings, changeType }) => {
-  let { type, frequency, detune } = settings;
+const Osc1 = () => {
+  const [appState, updateState] = useContext(CTX);
+  const [custom, setCustom] = useState(false);
+  let { type, detune } = appState.osc1Settings;
+
+  const change = (e) => {
+    let { id, value } = e.target;
+    updateState({ type: "CHANGE_OSC1", payload: { id, value } });
+  };
+
+  const changeType = (e) => {
+    let { id } = e.target;
+    updateState({ type: "CHANGE_OSC1_TYPE", payload: { id } });
+  };
+
   return (
     <div className="control">
       <h2>osc 1</h2>
-
-      <div className="param">
-        <h3>frequency</h3>
-        <input value={frequency} onChange={change} max="5000" type="range" id="frequency" />
-      </div>
 
       <div className="param">
         <h3>detune</h3>
@@ -30,6 +39,9 @@ const Osc1 = ({ change, settings, changeType }) => {
         <button id="sawtooth" onClick={changeType} className={`${type === "sawtooth" && "active"}`}>
           sawtooth
         </button>
+        {/* <button id="custom" onClick={changeType} className={`${type === "custom" && "active"}`}>
+          custom
+        </button> */}
       </div>
     </div>
   );
