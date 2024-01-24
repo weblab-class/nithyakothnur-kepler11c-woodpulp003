@@ -79,7 +79,6 @@ const App = () => {
           <NotFound default />
         </Routes> */}
       {/* // </div> */}
-
     </BrowserRouter>
   );
 };
