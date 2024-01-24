@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
+import WaveCard from "../modules/WaveCard.js";
 
-import { NewWave } from "../modules/SaveWaves.js";
-
+import { NewWave } from "../modules/NewWaveInput.js";
 import { get } from "../../utilities.js";
 
 const Play = () => {
@@ -9,39 +9,49 @@ const Play = () => {
 
   useEffect(() => {
     get("/api/waves").then((waveObj) => {
-      setWaves(waveObj);
+      let reversedWaveObjs = waveObj.reverse();
+      setWaves(reversedWaveObjs);
     });
   }, []);
 
-  //   const addNewWave = (waveObj) => {
-  //       setWaves([waveObj]);
-  //   }
-
+  const addNewWave = (waveObj) => {
+    setWaves([waveObj].concat(waves));
+  };
 
   let wavesList = null;
 
   const hasWaves = waves.length !== 0;
   if (hasWaves) {
     wavesList = waves.map((waveObj) => (
-
-        {waveObj._id}
-        {waveObj.test}
-
-        waveObj.
-
-      <Card
-        key={`Card_${storyObj._id}`}
-        _id={storyObj._id}
-        creator_name={storyObj.creator_name}
-        content={storyObj.content}
+      <WaveCard
+        key={waveObj._id}
+        _id={"HAPPY COW"}
+        waveId={waveObj.waveId}
+        attack={waveObj.attack}
       />
+
+      //  * Proptypes
+      //  * @param {string} userId for the user
+      //  * @param {string} waveId of the wave
+      //  * @param {string} wave type of wave
+      //  * @param {number} attack
+      //  * @param {number} delay
+      //  * @param {number} sustain
+      //  * @param {number} release
+      //  * @param {number} unisonVoice
+      //  * @param {number} unisonDetune
+      //  * @param {number} filterCutoff
+      //  * @param {number} filterQ
+      //  * @param {number} filterType
+      //  */
     ));
-
-
+  } else {
+    wavesList = <div>No waves created!</div>;
+  }
 
   return (
     <>
-      console.log("this is play")
+      <NewWave addNewWave={addNewWave} />
       {wavesList}
     </>
   );

@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from "react";
-import SingleWave from "./SingleWave";
-
-import { get } from "../../utilities";
+import React from "react";
 
 /**
- * Card is a component for displaying content like stories
+ * Wave is a component that renders creator and content of a story
  *
  * Proptypes
  * @param {string} _id for the user
@@ -21,12 +18,13 @@ import { get } from "../../utilities";
  * @param {number} filterType
  */
 
-const WaveCard = (props) => {
+const SingleWave = (props) => {
   return (
-    <div className="Card-container">
-      <SingleWave _id={props._id} waveId={props.waveId} attack={props.attack} />
+    <div>
+      <p> Wave name: {props.waveId}</p>
+      <p>Attack Value: {props.attack}</p>
     </div>
   );
 };
 
-export default WaveCard;
+export default SingleWave;

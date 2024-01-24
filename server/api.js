@@ -45,17 +45,18 @@ router.post("/initsocket", (req, res) => {
 // |------------------------------|
 
 router.get("/waves", (req, res) => {
-  console.log("testing the get function");
+  // console.log("testing the get function");
   Wave.find({}).then((waves) => res.send(waves));
 });
 
-// router.post("/wave", (req, res) => {
-//   const newWave = new Wave({
-//     wave: req.body.wave,
-//   })
+router.post("/wave", (req, res) => {
+  const newWave = new Wave({
+    waveId: req.body.waveId,
+    attack: req.body.attack,
+  })
 
-//   newWave.save().then((wave) => res.send(wave));
-// });
+  newWave.save().then((wave) => res.send(wave));
+});
 
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
