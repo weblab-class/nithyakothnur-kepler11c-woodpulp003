@@ -55,7 +55,7 @@ const App = () => {
 
     <BrowserRouter>
       <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
-          Route path="/" element={<Home />} /> */}
+          Route path="/" element={<Home />} 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/learn" element={<Learn />} />
