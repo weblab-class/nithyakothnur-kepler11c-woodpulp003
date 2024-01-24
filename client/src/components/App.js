@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route, Router } from "react-router-dom";
+import { Routes, Route, Router, BrowserRouter } from "react-router-dom";
 
 import jwt_decode from "jwt-decode";
 
@@ -48,31 +48,32 @@ const App = () => {
 
   const handleLogout = () => {
     setUserId(undefined);
-    console.log("LOGGIN OUT");
     post("/api/logout");
   };
 
-  // console.log("testing");
-
   return (
-    <>
-      {/* <h1></h1> */}
-      <NavBar
-        handleLogin={handleLogin}
-        handleLogout={handleLogout}
-        userId={userId}
-        decodedName={decodedName}
-      />
+
+    <BrowserRouter>
+      <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/learn" element={<Learn />} />
+        {/* <Route path="/blend" element={<Blend />} /> */}
+        {/* <Route path="/play" element={<Play />} /> */}
+        {/* <Route path="/profile" element={<Profile />} /> */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+
       {/* <div>
-        <Routes>
-          <Route path="/" element={<Home />} /> */}
+        <Routes> */}
+      {/* <Route path="/" element={<Home />} /> */}
       {/* <Route path="/learn" element={<Learn />} /> */}
       {/* <Route path="/blend" element={<Blend path="/blend" />}></Route>
           <Route path="/play" element={<Play path="/play" />}></Route>
           <Route path="/profile" element={<Profile path="/profile" />}></Route> */}
-      {/* <Route path="*" element={<NotFound />}></Route> */}
-      {/* </Routes> */}
-      {/* <Routes>
+      {/* <Route path="*" element={<NotFound />}></Route>
+        </Routes>
+        {/* <Routes>
           <Home path="/" />
           <Learn path="/learn" />
           <Blend path="/blend" />
@@ -80,8 +81,8 @@ const App = () => {
           <Profile path="/profile/:userId" />
           <NotFound default />
         </Routes> */}
-      {/* </div> */}
-    </>
+      {/* // </div> */}
+    </BrowserRouter>
   );
 };
 
