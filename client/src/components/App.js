@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route, Router } from "react-router-dom";
+import { Routes, Route, Router, BrowserRouter } from "react-router-dom";
 
 import jwt_decode from "jwt-decode";
 
@@ -23,12 +23,14 @@ import { get, post } from "../utilities";
  */
 const App = () => {
   const [userId, setUserId] = useState(undefined);
+  const [decodedName, setDecodedName] = useState(undefined);
 
   useEffect(() => {
     get("/api/whoami").then((user) => {
       if (user._id) {
         // they are registed in the database, and currently logged in.
         setUserId(user._id);
+        setDecodedName(user.name);
       }
     });
   }, []);
@@ -37,6 +39,7 @@ const App = () => {
     const userToken = credentialResponse.credential;
     const decodedCredential = jwt_decode(userToken);
     console.log(`Logged in as ${decodedCredential.name}`);
+    setDecodedName(decodedCredential.name);
     post("/api/login", { token: userToken }).then((user) => {
       setUserId(user._id);
       post("/api/initsocket", { socketid: socket.id });
@@ -49,18 +52,30 @@ const App = () => {
   };
 
   return (
-    <>
+
+    <BrowserRouter>
       <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
+          Route path="/" element={<Home />} /> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/learn" element={<Learn />} />
+        {/* <Route path="/blend" element={<Blend />} /> */}
+        {/* <Route path="/play" element={<Play />} /> */}
+        {/* <Route path="/profile" element={<Profile />} /> */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+
       {/* <div>
-        <Routes>
-          <Route path="/" element={<Home />} /> */}
+        <Routes> */}
+      {/* <Route path="/" element={<Home />} /> */}
       {/* <Route path="/learn" element={<Learn />} /> */}
       {/* <Route path="/blend" element={<Blend path="/blend" />}></Route>
           <Route path="/play" element={<Play path="/play" />}></Route>
           <Route path="/profile" element={<Profile path="/profile" />}></Route> */}
-      {/* <Route path="*" element={<NotFound />}></Route> */}
-      {/* </Routes> */}
-      {/* <Routes>
+
+      {/* <Route path="*" element={<NotFound />}></Route>
+        </Routes>
+        {/* <Routes>
           <Home path="/" />
           <Learn path="/learn" />
           <Blend path="/blend" />
@@ -69,7 +84,8 @@ const App = () => {
           <NotFound default />
         </Routes> */}
       {/* // </div> */}
-    </>
+
+    </BrowserRouter>
   );
 };
 
