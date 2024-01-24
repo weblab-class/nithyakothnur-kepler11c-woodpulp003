@@ -10,7 +10,11 @@ import Store from "./components/pages/context/Store.js";
 const container = document.getElementById("root");
 const root = createRoot(container);
 
-root.render(<App />);
+root.render(
+  <Store>
+    <App />
+  </Store>
+);
 
 // allows for live updating
 module.hot.accept();
