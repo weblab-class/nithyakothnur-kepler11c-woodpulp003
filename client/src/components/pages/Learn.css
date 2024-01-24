@@ -10,8 +10,12 @@
 }
 
 #sidebar {
-  padding: 40px;
+  padding: 40px 16px;
 }
 .learnCard {
   display: flex;
+}
+
+#content1 {
+  padding: 10px 20px;
 }
