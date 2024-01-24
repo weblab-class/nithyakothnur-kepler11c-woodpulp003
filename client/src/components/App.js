@@ -55,6 +55,7 @@ const App = () => {
 
     <BrowserRouter>
       <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
+          Route path="/" element={<Home />} /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/learn" element={<Learn />} />
@@ -71,6 +72,7 @@ const App = () => {
       {/* <Route path="/blend" element={<Blend path="/blend" />}></Route>
           <Route path="/play" element={<Play path="/play" />}></Route>
           <Route path="/profile" element={<Profile path="/profile" />}></Route> */}
+
       {/* <Route path="*" element={<NotFound />}></Route>
         </Routes>
         {/* <Routes>
@@ -82,6 +84,7 @@ const App = () => {
           <NotFound default />
         </Routes> */}
       {/* // </div> */}
+
     </BrowserRouter>
   );
 };
