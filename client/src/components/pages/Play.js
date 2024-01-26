@@ -25,7 +25,7 @@ const Play = () => {
     wavesList = waves.map((waveObj) => (
       <WaveCard
         key={waveObj._id}
-        _id={"HAPPY COW"}
+        _id={waveObj._id}
         waveId={waveObj.waveId}
         attack={waveObj.attack}
       />
@@ -51,8 +51,13 @@ const Play = () => {
 
   return (
     <>
-      <NewWave addNewWave={addNewWave} />
-      {wavesList}
+      <div>
+        <h3>Sign up or login to save your soundwave creations. </h3>
+      </div>
+      <div>
+        <NewWave addNewWave={addNewWave} />
+        {wavesList}
+      </div>
     </>
   );
 };
