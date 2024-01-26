@@ -1,29 +1,30 @@
 import React, { useState } from "react";
 
-import "../../utilities.css";
-import "../pages/Learn.css";
+// import "../../utilities.css";
+// import "../pages/Learn.css";
 import EnvelopeGraph from "../modules/ADSR";
+import Sine from "../modules/Sine";
+import Fourier from "../modules/Fourier";
 
 const Learn = () => {
   const [attack, setAttack] = useState(0.5);
   const changeAttack = (event) => {
-    console.log(event);
-    setAttack(event.target.value);
+    setAttack(Number(event.target.value));
   };
 
   const [decay, setDecay] = useState(0.5);
-  const changeDecay = () => {
-    setDecay(decay + 0.1);
+  const changeDecay = (event) => {
+    setDecay(Number(event.target.value));
   };
 
   const [sustain, setSustain] = useState(0.3);
-  const changeSustain = () => {
-    setSustain(sustain + 0.1);
+  const changeSustain = (event) => {
+    setSustain(Number(event.target.value));
   };
 
   const [release, setRelease] = useState(0.8);
-  const changeRelease = () => {
-    setRelease(release + 0.1);
+  const changeRelease = (event) => {
+    setRelease(Number(event.target.value));
   };
 
   return (
@@ -41,12 +42,26 @@ const Learn = () => {
               <li id="blend_mark" class>
                 <a href="#blend">Learning to use blend: </a>
               </li>
+              <li id="attack_mark">
+                <a href="#attack">Using Attack: </a>
+              </li>
+              <li id="decay_mark">
+                <a href="#decay">Using Decay: </a>
+              </li>
+              <li id="sustain_mark">
+                <a href="#sustain">Using sustain: </a>
+              </li>
+              <li id="release_mark">
+                <a href="#attack">Using release: </a>
+              </li>
             </ul>
           </div>
         </aside>
         <div className="mainContent">
           <div className="content1" id="introduction_to_fourier_series">
             <p>The fourier series introduced in ... by ...</p>
+            <Sine />
+            <Fourier />
             {/* const ctx = document.getElementById("canvas").getContext("2d"); plotSine(cts); */}
             {/* <SineGraph /> */}
           </div>
@@ -73,7 +88,18 @@ const Learn = () => {
               </div>
             </p>
           </div>
-          <div className="content4" id=""></div>
+          <div className="content4" id="attack">
+            <p>This is the attack section.</p>
+          </div>
+          <div className="content5" id="decay">
+            <p>This is the decay section.</p>
+          </div>
+          <div className="content6" id="sustain">
+            <p>This is the sustain section.</p>
+          </div>
+          <div className="content7" id="release">
+            <p>This is the release section.</p>
+          </div>
         </div>
       </div>
     </>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "./NavBar.css";
+// import "./NavBar.css";
 
 /*
 The navigation bar takes no props
@@ -9,16 +9,16 @@ The navigation bar takes no props
 
 import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
 
-import "../../utilities.css";
+// import "../../utilities.css";
 
 const GOOGLE_CLIENT_ID = "797662258474-8kbeajde3f0trr5kbg77tsa5l0abv1o6.apps.googleusercontent.com";
 
 const NavBar = (props) => {
   return (
-    <nav className="NavBar-container">
+    <nav class="flex space-x-10 hidden md:flex-1 md:flex md:items-center md:justify-between">
       {/* <div className="NavBar-title u-inlineBlock">Catbook</div> */}
-      <div className="NavBar-linkContainer u-inlineBlock">
-        <div className="NavBar-left">
+      <div class="flex">
+        <div class="flex items-center inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
           <Link to="/" className="NavBar-link">
             Home
           </Link>
@@ -33,7 +33,7 @@ const NavBar = (props) => {
           </Link>
         </div>
 
-        <div className="NavBar-right">
+        <div>
           <>
             {props.userId ? <div className="name">Welcome {props.decodedName}!</div> : <div> </div>}
           </>
