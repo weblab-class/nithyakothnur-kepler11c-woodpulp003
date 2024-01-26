@@ -6,16 +6,8 @@ import EnvelopeGraph from "../modules/ADSR";
 
 const Learn = () => {
   const [attack, setAttack] = useState(0.5);
-  const change = (e) => {
-    setAttack(e.target.value);
-  };
-  const [value, setValue] = useState(0.5);
-
-  const handleInputChange = (event) => {
-    setValue(event.target.value);
-    // setAttack(event.target.value);
-    console.log(event.target.value);
-    console.log(value);
+  const change = () => {
+    setAttack(attack + 0.1);
   };
 
   return (
@@ -25,73 +17,32 @@ const Learn = () => {
           <div className="content">
             <ul id="sidebar">
               <li id="head_mark">
-                <a href="#weekone">week 1: </a>
+                <a href="#introdution_to_fourier_series">Introduction to the Fourier Series: </a>
               </li>
-              <li id="weektwo_mark" class>
-                <a href="#weektwo">week 2: </a>
+              <li id="using_the_fourier_series_mark" class>
+                <a href="#using_the_fourier_series">Using the fourier series: </a>
               </li>
             </ul>
           </div>
         </aside>
         <div className="mainContent">
-          <div className="content1" id="weekone">
-            <h1>hdiehdiehd</h1>
-            <h2>dheidheidh</h2>
-            <p>idheihdihedisadiniedjeidjeijdeidjeijdiej</p>
-            <h1>hdiehdiehdih</h1>
-            <h1>dhie</h1>
-            <h1>dhie</h1>
-            <h1>dhie</h1>
-            <h1>dhie</h1>
-            <h1>dhie</h1>
-            <h1>dhie</h1>
-            <h1>dhie</h1>
-            <h1>dhie</h1>
-            <h1>dhie</h1>
-            <h1>dhie</h1>
-            <h1>dhie</h1>
-            <h1>dhie</h1>
-            <h1>dhie</h1>
-            <h1>dhie</h1>
-            <h1>dhie</h1>
-            <h1>dhie</h1>
-            <h1>dhie</h1>
+          <div className="content1" id="introduction_to_fourier_series">
+            <p>The fourier series introduced in ... by ...</p>
             {/* const ctx = document.getElementById("canvas").getContext("2d"); plotSine(cts); */}
             {/* <SineGraph /> */}
           </div>
-          <div className="content2" id="weektwo">
-            <h1>diehdiehdei</h1>
-            <h2>dheidheidheid</h2>
-            <p>hdiheidheidhiehd</p>
-            console.log(value)
-            <EnvelopeGraph a={value} d={0.5} s={0.3} r={0.8} />
+          <div className="content2" id="using_the_fourier_series">
+            <p>
+              We are going to use the fourier series to break down a periodic function represented
+              as a function into sine functions with period 2pi.
+            </p>
+            <EnvelopeGraph a={attack} d={0.5} s={0.3} r={0.8} />
             <div>
               <h3>attack</h3>
-              <input
-                type="range"
-                id="rangeInput"
-                name="rangeInput"
-                onChange={change}
-                min="0"
-                max="1"
-              />
+              <input type="range" step="0.1" onChange={change} min="0" max="1" />
             </div>
           </div>
         </div>
-      </div>
-      <div>
-        {/* <label htmlFor="rangeInput">Select a value:</label> */}
-        <input
-          type="range"
-          id="rangeInput"
-          name="rangeInput"
-          min="0"
-          max="1"
-          step="0.1"
-          value={value}
-          onChange={handleInputChange}
-        />
-        <p>Selected value: {value}</p>
       </div>
     </>
   );
