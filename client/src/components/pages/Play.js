@@ -7,12 +7,12 @@ import { get } from "../../utilities.js";
 const Play = () => {
   const [waves, setWaves] = useState([]);
 
-  useEffect(() => {
-    get("/api/waves").then((waveObj) => {
-      let reversedWaveObjs = waveObj.reverse();
-      setWaves(reversedWaveObjs);
-    });
-  }, []);
+  // useEffect(() => {
+  //   get("/api/waves").then((waveObj) => {
+  //     let reversedWaveObjs = waveObj.reverse();
+  //     setWaves(reversedWaveObjs);
+  //   });
+  // }, []);
 
   const addNewWave = (waveObj) => {
     setWaves([waveObj].concat(waves));
@@ -29,21 +29,7 @@ const Play = () => {
         waveId={waveObj.waveId}
         attack={waveObj.attack}
       />
-
-      //  * Proptypes
-      //  * @param {string} userId for the user
-      //  * @param {string} waveId of the wave
-      //  * @param {string} wave type of wave
-      //  * @param {number} attack
-      //  * @param {number} delay
-      //  * @param {number} sustain
-      //  * @param {number} release
-      //  * @param {number} unisonVoice
-      //  * @param {number} unisonDetune
-      //  * @param {number} filterCutoff
-      //  * @param {number} filterQ
-      //  * @param {number} filterType
-      //  */
+      
     ));
   } else {
     wavesList = <div>No waves created!</div>;

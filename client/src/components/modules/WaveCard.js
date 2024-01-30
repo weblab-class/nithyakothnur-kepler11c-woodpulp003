@@ -22,6 +22,15 @@ import { get } from "../../utilities";
  */
 
 const WaveCard = (props) => {
+  const [waves, setWaves] = useState([]);
+
+  useEffect(() => {
+    get("/api/waves").then((waveObj) => {
+      let reversedWaveObjs = waveObj.reverse();
+      setWaves(reversedWaveObjs);
+    });
+  });
+
   return (
     <div className="Card-container">
       <SingleWave _id={props._id} waveId={props.waveId} attack={props.attack} />

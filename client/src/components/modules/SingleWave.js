@@ -22,7 +22,7 @@ const SingleWave = (props) => {
   return (
     <div>
       <p> Wave name: {props.waveId}</p>
-      <p>Attack Value: {props.attack}</p>
+      <p> Attack value: {props.attack} </p>
     </div>
   );
 };
