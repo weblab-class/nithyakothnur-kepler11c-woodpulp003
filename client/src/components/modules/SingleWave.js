@@ -52,7 +52,7 @@ const SingleWave = (props) => {
   return (
     <div className="card_style">
       <p>{props.waveId}</p>
-      <button type="submit" value="Submit" onClick={handleSubmit}>
+      <button class="border m-2 p-2" type="submit" value="Submit" onClick={handleSubmit}>
         {" "}
         Add Wave
       </button>
