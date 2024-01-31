@@ -56,6 +56,15 @@ function Blend(props) {
   
     <div class="flex flex-row items-center justify-between">
       {/* <h1>Basic Oscillator Maker</h1> */}
+      <div class="sticky top-0 self-start flex flex-col">
+        <div class="flex flex-row">
+          <ADSR />
+          <Filter />
+        </div>
+        <div class="relative bottom-0 center-0">
+          <Keyboard />
+        </div>
+      </div>
       <div class="flex flex-col items-center justify-between">
         <Osc1 />
         <NewWave
@@ -71,15 +80,6 @@ function Blend(props) {
           filterType={appState.filterSettings.type}
       />
       {wavesList}
-      </div>
-      <div class="flex flex-col">
-        <div class="flex flex-row">
-          <ADSR />
-          <Filter />
-        </div>
-        <div class="relative bottom-0 center-0">
-          <Keyboard />
-        </div>
       </div>
     </div>
   );
