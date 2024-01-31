@@ -4,15 +4,15 @@ import WaveCard from "../modules/WaveCard.js";
 import { NewWave } from "../modules/NewWaveInput.js";
 import { get } from "../../utilities.js";
 
-const Play = () => {
+const Play = (props) => {
   const [waves, setWaves] = useState([]);
 
   useEffect(() => {
-    get("/api/waves").then((waveObj) => {
+    get("/api/waves", { userId: props.userId }).then((waveObj) => {
       let reversedWaveObjs = waveObj.reverse();
       setWaves(reversedWaveObjs);
     });
-  }, []);
+  }, [props.userId]);
 
   const addNewWave = (waveObj) => {
     setWaves([waveObj].concat(waves));
@@ -25,34 +25,21 @@ const Play = () => {
     wavesList = waves.map((waveObj) => (
       <WaveCard
         key={waveObj._id}
-        _id={"HAPPY COW"}
+        _id={waveObj._id}
         waveId={waveObj.waveId}
         attack={waveObj.attack}
       />
-
-      //  * Proptypes
-      //  * @param {string} userId for the user
-      //  * @param {string} waveId of the wave
-      //  * @param {string} wave type of wave
-      //  * @param {number} attack
-      //  * @param {number} delay
-      //  * @param {number} sustain
-      //  * @param {number} release
-      //  * @param {number} unisonVoice
-      //  * @param {number} unisonDetune
-      //  * @param {number} filterCutoff
-      //  * @param {number} filterQ
-      //  * @param {number} filterType
-      //  */
     ));
   } else {
-    wavesList = <div>No waves created!</div>;
+    wavesList = <div className="class-Container">No waves created!</div>;
   }
 
   return (
     <>
-      <NewWave addNewWave={addNewWave} />
+      <NewWave addNewWave={addNewWave} userId={props.userId} />
       {wavesList}
+      {/* {console.log("Play -> userId is: ", props.userId)}
+      {console.log("testing that userId exists ^^")} */}
     </>
   );
 };

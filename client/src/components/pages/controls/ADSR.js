@@ -3,6 +3,8 @@ import { CTX } from "../context/Store";
 import { Envelope } from "tone";
 import EnvelopeGraph from "../../modules/ADSR";
 
+import EnvelopeGraph from "../../modules/ADSR";
+
 const ADSR = () => {
   const [appState, updateState] = useContext(CTX);
   let { attack, decay, sustain, release } = appState.envelope;
@@ -31,17 +33,10 @@ const ADSR = () => {
         <h3>release</h3>
         <input value={release} type="range" id="release" onChange={change} max="3" step="0.02" />
       </div>
+
+      {/* <div> */}
       <EnvelopeGraph a={attack} d={decay} s={sustain} r={release} />
-      {/* <div>
-        <h3>attack</h3>
-        <input type="range" step="0.1" onChange={changeAttack} min="0" max="1" />
-        <h3>decay</h3>
-        <input type="range" step="0.1" onChange={changeDecay} min="0" max="1" />
-        <h3>sustain</h3>
-        <input type="range" step="0.1" onChange={changeSustain} min="0" max="1" />
-        <h3>release</h3>
-        <input type="range" step="0.1" onChange={changeRelease} min="0" max="1" />
-      </div> */}
+      {/* </div> */}
     </div>
   );
 };
