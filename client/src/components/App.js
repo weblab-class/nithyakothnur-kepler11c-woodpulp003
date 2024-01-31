@@ -52,17 +52,17 @@ const App = () => {
 
   return (
     <BrowserRouter>
+
       <div>
         <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/learn" element={<Learn />} />
-          <Route path="/blend" element={<Blend />} />
+          <Route path="/blend" element={<Blend userId={userId} />} />
           <Route path="/play" element={<Play />} />
           {/* <Route path="/profile" element={<Profile />} /> */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-
 
         {/* <div>
         <Routes> */}
