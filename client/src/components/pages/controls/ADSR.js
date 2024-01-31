@@ -3,8 +3,6 @@ import { CTX } from "../context/Store";
 import { Envelope } from "tone";
 import EnvelopeGraph from "../../modules/ADSR";
 
-import EnvelopeGraph from "../../modules/ADSR";
-
 const ADSR = () => {
   const [appState, updateState] = useContext(CTX);
   let { attack, decay, sustain, release } = appState.envelope;

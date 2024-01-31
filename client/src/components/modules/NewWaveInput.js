@@ -34,12 +34,10 @@ const NewWaveInput = (props) => {
 
     const updateWaveId = document.getElementById("name").value;
     setWaveId(updateWaveId);
-    console.log("name is ", updateWaveId);
+    //console.log("name is ", updateWaveId);
 
-    console.log(props.userId);
-    props.userId
-      ? props.onSubmit(updateWaveId)
-      : console.log("user should login before submitting"); //Add here what to do if the user is not logged in
+    //console.log(props.userId);
+    props.userId ? props.onSubmit(updateWaveId) : console.log(""); //Add here what to do if the user is not logged in
   };
 
   const change = (e) => {
@@ -52,17 +50,23 @@ const NewWaveInput = (props) => {
   const update = (e) => {
     let { id, waveId } = e.target;
     setWaveId(waveId);
-    console.log(waveId);
+    //(waveId);
   };
 
   return (
     <>
-      <div>
+      <div class="p-4 m-4">
         {" "}
-        <p>Name Your Wave: </p>
-        <input type="text" placeholder="Enter Wave Name" id="name" onChange={update}></input>
+        <p>Give Your Wave a Number: </p>
+        <input
+          class="text-black"
+          type="text"
+          placeholder="Enter Number"
+          id="name"
+          onChange={update}
+        ></input>
         {/* <input value={testNumber} type="range" onChange={change} id="attack" max="10000" /> */}
-        <button type="submit" value="Submit" onClick={handleSubmit}>
+        <button clas="p-4" type="submit" value="Submit" onClick={handleSubmit}>
           {" "}
           Submit
         </button>
