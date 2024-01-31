@@ -21,13 +21,13 @@ import { post } from "../../utilities";
  */
 
 const NewWaveInput = (props) => {
-  const [value, setValue] = useState("");
+  const [attack, setAttack] = useState("");
   const [waveName, setWaveName] = useState();
   const [testNumber, setTestNumber] = useState(3700);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setValue(value);
+    setAttack(attack);
 
     const updatedWaveName = document.getElementById("name").value;
     setWaveName(updatedWaveName);
@@ -35,13 +35,13 @@ const NewWaveInput = (props) => {
 
     console.log(props.userId);
     props.userId
-      ? props.onSubmit(value, updatedWaveName)
+      ? props.onSubmit(attack, updatedWaveName)
       : console.log("user should login before submitting"); //Add here what to do if the user is not logged in
   };
 
   const change = (e) => {
     let { id, value } = e.target;
-    setValue(value);
+    setAttack(value);
     setTestNumber(value);
     //console.log("Value received is ", value, "Id is", id);
   };

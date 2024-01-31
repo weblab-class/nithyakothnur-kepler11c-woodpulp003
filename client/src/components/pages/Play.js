@@ -38,8 +38,8 @@ const Play = (props) => {
     <>
       <NewWave addNewWave={addNewWave} userId={props.userId} />
       {wavesList}
-      {console.log("Play -> userId is: ", props.userId)}
-      {console.log("testing that userId exists ^^")}
+      {/* {console.log("Play -> userId is: ", props.userId)}
+      {console.log("testing that userId exists ^^")} */}
     </>
   );
 };

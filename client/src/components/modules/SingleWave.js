@@ -25,7 +25,6 @@ const SingleWave = (props) => {
   return (
     <div className="card_style">
       <p>{props.waveId}</p>
-      {/* <p>Attack Value: {props.attack}</p> */}
     </div>
   );
 };

@@ -1,11 +1,47 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Osc1 from "./controls/OscControl.js";
 import Filter from "./controls/FilterControls.js";
 import Keyboard from "./controls/KeyboardControls.js";
 import ADSR from "./controls/ADSR.js";
+import WaveCard from "../modules/WaveCard.js";
+import { NewWave } from "../modules/NewWaveInput.js";
+import { CTX } from "./context/Store.js";
+
+import { get } from "../../utilities.js";
+
 import "./Blend.css";
 
-function Blend() {
+function Blend(props) {
+  const [waves, setWaves] = useState([]);
+  const [appState, updateState] = useContext(CTX);
+
+  useEffect(() => {
+    get("/api/waves", { userId: props.userId }).then((waveObj) => {
+      let reversedWaveObjs = waveObj.reverse();
+      setWaves(reversedWaveObjs);
+    });
+  }, [props.userId]);
+
+  const addNewWave = (waveObj) => {
+    setWaves([waveObj].concat(waves));
+  };
+
+  let wavesList = null;
+
+  const hasWaves = waves.length !== 0;
+  if (hasWaves) {
+    wavesList = waves.map((waveObj) => (
+      <WaveCard
+        key={waveObj._id}
+        _id={waveObj._id}
+        waveId={waveObj.waveId}
+        attack={waveObj.attack}
+      />
+    ));
+  } else {
+    wavesList = <div className="class-Container">No waves created!</div>;
+  }
+
   return (
     <div className="body">
       <h1>Basic Oscillator Maker</h1>
@@ -13,6 +49,10 @@ function Blend() {
       <ADSR />
       <Filter />
       <Keyboard />
+      <NewWave addNewWave={addNewWave} userId={props.userId} />
+      {wavesList}
+
+      {console.log(appState.envelope.attack)}
     </div>
   );
 }

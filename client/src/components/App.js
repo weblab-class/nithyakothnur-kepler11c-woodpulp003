@@ -61,7 +61,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/learn" element={<Learn />} />
-        <Route path="/blend" element={<Blend />} />
+        <Route path="/blend" element={<Blend userId={userId} />} />
         <Route path="/play" element={<Play userId={userId} />} />
         {/* <Route path="/profile" element={<Profile />} /> */}
         <Route path="*" element={<NotFound />} />
