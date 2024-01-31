@@ -169,32 +169,67 @@ const Learn = () => {
       <div class="flex flex-row">
         <aside>
           <div class="px-5">
-            <ul id="sidebar">
+            <ul id="sidebar" class="flex-1">
               <li id="head_mark">
-                <a href="#introdution_to_fourier_series">1. Introduction to the Fourier Series: </a>
+                <a
+                  href="#introdution_to_fourier_series"
+                  class="hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                  1. Introduction to the Fourier Series:{" "}
+                </a>
               </li>
               <li id="using_the_fourier_series_mark" class>
-                <a href="#using_the_fourier_series">2. Using the fourier series: </a>
+                <a
+                  href="#using_the_fourier_series"
+                  class="hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                  2. Using the fourier series:{" "}
+                </a>
               </li>
               <li id="blend_mark" class>
-                <a href="#blend">3. Learning to use blend: </a>
+                <a
+                  href="#blend"
+                  class="hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                  3. Learning to use blend:{" "}
+                </a>
               </li>
               <li id="attack_mark">
-                <a href="#attack">4. Using Attack: </a>
+                <a
+                  href="#attack"
+                  class="hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                  4. Using Attack:{" "}
+                </a>
               </li>
               <li id="decay_mark">
-                <a href="#decay">5. Using Decay: </a>
+                <a
+                  href="#decay"
+                  class="hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                  5. Using Decay:{" "}
+                </a>
               </li>
               <li id="sustain_mark">
-                <a href="#sustain">6. Using sustain: </a>
+                <a
+                  href="#sustain"
+                  class="hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                  6. Using sustain:{" "}
+                </a>
               </li>
               <li id="release_mark">
-                <a href="#attack">7. Using release: </a>
+                <a
+                  href="#attack"
+                  class="hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                  7. Using release:{" "}
+                </a>
               </li>
             </ul>
           </div>
         </aside>
-        <div>
+        <div class="flex-1">
           <div id="introduction_to_fourier_series">
             <h1 class="text-2xl">Introduction to the fourier series</h1>
             <hr></hr>
