@@ -13,7 +13,9 @@ const ADSR = () => {
       <h2>ADSR</h2>
       <div className="param">
         <h3>attack</h3>
-        <input value={attack} type="range" id="attack" onChange={change} max="3" step="0.02" />
+        <div class="px-2">
+          <input value={attack} type="range" id="attack" onChange={change} max="3" step="0.02" />
+        </div>
       </div>
       <div className="param">
         <h3>decay</h3>

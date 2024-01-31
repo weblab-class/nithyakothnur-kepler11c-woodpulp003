@@ -7,12 +7,20 @@ import "./Blend.css";
 
 function Blend() {
   return (
-    <div className="body">
-      <h1>Basic Oscillator Maker</h1>
-      <Osc1 />
-      <ADSR />
-      <Filter />
-      <Keyboard />
+    <div class="flex flex-row items-center justify-between">
+      {/* <h1>Basic Oscillator Maker</h1> */}
+      <div class="flex flex-col items-center justify-between">
+        <Osc1 />
+      </div>
+      <div class="flex flex-col">
+        <div class="flex flex-row">
+          <ADSR />
+          <Filter />
+        </div>
+        <div class="px-40 py-10 absolute bottom-0 center-0">
+          <Keyboard />
+        </div>
+      </div>
     </div>
   );
 }
