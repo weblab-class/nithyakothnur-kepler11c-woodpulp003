@@ -26,18 +26,29 @@ const SingleWave = (props) => {
   const [appState, updateState] = useContext(CTX);
 
   const handleSubmit = (event) => {
-    console.log("you've clicked the button");
-    console.log(props);
-
-    let value = 1.5;
-    updateState({ type: "CHANGE_ADSR", payload: { attack, value } });
-    console.log("changed attack value");
-    console.log(props);
-
-
-
+    let id = props.wave;
+    updateState({ type: "CHANGE_OSC1_TYPE", payload: { id } });
+    id = "attack";
+    let value = props.attack;
+    updateState({ type: "CHANGE_ADSR", payload: { id, value } });
+    id = "decay";
+    value = props.decay;
+    updateState({ type: "CHANGE_ADSR", payload: { id, value } });
+    id = "sustain";
+    value = props.sustain;
+    updateState({ type: "CHANGE_ADSR", payload: { id, value } });
+    id = "release";
+    value = props.release;
+    updateState({ type: "CHANGE_ADSR", payload: { id, value } });
+    id = props.filterType;
+    updateState({ type: "CHANGE_FILTER_TYPE", payload: { id } });
+    id = "frequency";
+    value = props.filterCutoff;
+    updateState({ type: "CHANGE_FILTER", payload: { id, value } });
+    id = "Q";
+    value = props.filterQ;
+    updateState({ type: "CHANGE_FILTER", payload: { id, value } });
   };
-
   return (
     <div className="card_style">
       <p>{props.waveId}</p>
