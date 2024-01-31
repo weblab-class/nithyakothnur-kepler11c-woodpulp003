@@ -35,9 +35,6 @@ const NavBar = (props) => {
 
         <div className="NavBar-right">
           <>
-            {console.log("logging the decoded name: ")}
-
-            {/* {console.log(props.decodedCredential)} */}
             {props.userId ? <div className="name">Welcome {props.decodedName}!</div> : <div> </div>}
           </>
           <div>

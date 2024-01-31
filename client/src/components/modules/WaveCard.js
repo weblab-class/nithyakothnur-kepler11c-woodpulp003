@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import SingleWave from "./SingleWave";
+import "./WaveCard.css"
 
 import { get } from "../../utilities";
 
 /**
- * Card is a component for displaying content like stories
+ * Card is a component for displaying content like waves
  *
  * Proptypes
  * @param {string} _id for the user
+ * @param {string} userId
  * @param {string} waveId of the wave
  * @param {string} wave type of wave
  * @param {number} attack

@@ -1,10 +1,13 @@
 import React from "react";
 
+import "./SingleWave.css";
+
 /**
  * Wave is a component that renders creator and content of a story
  *
  * Proptypes
  * @param {string} _id for the user
+ * @param {string} userId
  * @param {string} waveId of the wave
  * @param {string} wave type of wave
  * @param {number} attack
@@ -20,9 +23,9 @@ import React from "react";
 
 const SingleWave = (props) => {
   return (
-    <div>
-      <p> Wave name: {props.waveId}</p>
-      <p>Attack Value: {props.attack}</p>
+    <div className="card_style">
+      <p>{props.waveId}</p>
+      {/* <p>Attack Value: {props.attack}</p> */}
     </div>
   );
 };
