@@ -1,86 +1,45 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import "../pages/Home.css";
+//mt-12 space-y-4 sm:mt-16 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:mx-auto lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-4
 
 const Home = (props) => {
   return (
-    <body>
-      <div className="title">Welcome to Sound Mixer!</div>
-      <div className="main u-textCenter">
-        <div className="block">
-          <img src="./images/happycow.jpeg" />
-          <div>
+    <body class="bg-#0b1440 p-8">
+      <div class="sm:align-center sm:flex sm:flex-col">
+        <h1 class="text-5xl font-extrabold text-white-900 sm:text-center">
+          Welcome to Sound Mixer
+        </h1>
+        <p class="mt-4 text-xl text-white-500 sm:text-center mb-8">
+          • • • ♪ where your inner soul finds its musical happiness ♪ • • •
+        </p>
+      </div>
+      <div class="flex flex-row ">
+        <div class="rounded-lg  shadow-sm items-center">
+          <div class="flex justify-center items-center">
+            <img class="w-2/3 rounded-lg" src="./images/learning.jpeg" />
+          </div>
+          <div class="p-6 flex justify-center items-center text-xl text-white-50">
             <Link to="/learn" className="NavBar-link main-title">
               Learn
             </Link>
           </div>
-          <p>
-            Navigate the wonders behind the science of waves and explore how use the features on
-            this website. "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-            irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-            deserunt mollit anim id est laborum."{" "}
-          </p>
-          <p>
-            Mix together different types of waveforms to create your own sounds. "Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          <p class="text-1xl font-extrabold text-gray-500 text-center">
+            Navigate the wonders behind the science of waves and explore how to blend music.{" "}
           </p>
         </div>
-        <div className="block">
-          <img src="./images/happycow.jpeg" />
-          <div>
+        <div class=" rounded-lg shadow-sm">
+          <div class="flex justify-center items-center">
+            <img class="w-2/3 rounded-lg" src="./images/blending.jpeg" />
+          </div>
+          <div class="p-6 flex justify-center items-center text-xl text-white-50">
             <Link to="/blend" className="NavBar-link main-title">
               Blend
             </Link>
-          </div>{" "}
-          <p>
-            Mix together different types of waveforms to create your own sounds. "Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          </div>
+          <p class="text-1xl font-extrabold text-gray-500 text-center">
+            Mix together different types of waveforms to create your own sounds.
           </p>{" "}
-          <p>
-            Mix together different types of waveforms to create your own sounds. "Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-          </p>
-        </div>
-        <div className="block">
-          <img src="./images/happycow.jpeg" />
-          <div>
-            <Link to="/play" className="NavBar-link main-title">
-              Play
-            </Link>
-          </div>{" "}
-          <p>
-            Enjoy pre-set waveforms or your own saved sounds to play music on the piano. "Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-            est laborum."
-          </p>{" "}
-          <p>
-            Mix together different types of waveforms to create your own sounds. "Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-          </p>
         </div>
       </div>
     </body>

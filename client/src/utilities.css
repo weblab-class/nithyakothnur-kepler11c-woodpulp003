@@ -16,6 +16,9 @@
 
 /* TODO: REPLACE WITH YOUR OWN FONT! */
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 :root {
   --primary: #0b1440;
@@ -39,7 +42,6 @@ body {
   background-color: var(--primary);
   color: var(--white);
 }
-
 
 form {
   flex-grow: 1;

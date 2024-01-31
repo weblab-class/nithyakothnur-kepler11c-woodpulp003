@@ -8,8 +8,8 @@ const Keyboard = () => {
   useEffect(() => {
     const keyboard = new QwertyHancock({
       id: "keyboard",
-      width: "449",
-      height: "70",
+      width: "700",
+      height: "170",
       octaves: 2,
       startNote: "C4",
       whiteKeyColour: "rgb(235,3,204)",
