@@ -34,12 +34,21 @@ function Blend(props) {
       <WaveCard
         key={waveObj._id}
         _id={waveObj._id}
+        userId={waveObj.userId}
         waveId={waveObj.waveId}
+        wave={waveObj.wave}
         attack={waveObj.attack}
+        decay={waveObj.decay}
+        sustain={waveObj.sustain}
+        release={waveObj.release}
+        filterCutoff={waveObj.filterCutoff}
+        filterQ={waveObj.filterQ}
+        filterType={waveObj.filterType}
       />
     ));
   } else {
     wavesList = <div className="class-Container">No waves created!</div>;
+
   }
 
   return (
@@ -63,7 +72,7 @@ function Blend(props) {
       />
       {wavesList}
 
-      {console.log(appState.envelope.decay)}
+      {/* {console.log(appState.envelope.decay)} */}
     </div>
   );
 }

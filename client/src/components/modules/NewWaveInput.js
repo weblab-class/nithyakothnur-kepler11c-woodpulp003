@@ -2,6 +2,10 @@ import React, { useState } from "react";
 
 import { post } from "../../utilities";
 
+const WaveModel = require(WaveModel)
+
+//const WaveModel = require("../../../../../nithyakothnur-kepler11c-woodpulp003/server/models/wave.js");
+
 /**
  * New Post is a parent component for all input components
  *
@@ -27,6 +31,8 @@ const NewWaveInput = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // setAttack(attack);
+
+
 
     const updateWaveId = document.getElementById("name").value;
     setWaveId(updateWaveId);
@@ -63,6 +69,7 @@ const NewWaveInput = (props) => {
           Submit
         </button>
       </div>
+      {/* {console.log(WaveModel.totalSize())} */}
       {/* {console.log("newwaveinput -> ", props.userId)} */}
     </>
   );

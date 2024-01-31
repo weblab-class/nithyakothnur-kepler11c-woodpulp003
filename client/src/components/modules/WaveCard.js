@@ -24,9 +24,22 @@ import { get } from "../../utilities";
  */
 
 const WaveCard = (props) => {
+  const [chosenWave, setChosenWave] = useState("");
   return (
     <div className="Card-container">
-      <SingleWave _id={props._id} waveId={props.waveId} attack={props.attack} />
+      <SingleWave
+        _id={props._id}
+        userId={props.userId}
+        waveId={props.waveId}
+        wave={props.wave}
+        attack={props.attack}
+        decay={props.decay}
+        sustain={props.sustain}
+        release={props.release}
+        filterCutoff={props.filterCutoff}
+        filterQ={props.filterQ}
+        filterType={props.filterType}
+      />
     </div>
   );
 };

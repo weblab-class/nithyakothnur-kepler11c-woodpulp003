@@ -16,4 +16,5 @@ const WaveSchema = new mongoose.Schema({
 });
 
 // compile model from schema
-module.exports = mongoose.model("wave", WaveSchema);
+const WaveModel = mongoose.model("wave", WaveSchema); 
+module.exports = WaveModel
