@@ -3,8 +3,8 @@ import React, { useState } from "react";
 // import "../../utilities.css";
 // import "../pages/Learn.css";
 import EnvelopeGraph from "../modules/ADSR";
-import Sine from "../modules/Sine";
-import Fourier from "../modules/Fourier";
+//import Sine from "../modules/Sine";
+//import Fourier from "../modules/Fourier";
 
 let actx = new AudioContext();
 let nodes = [];
