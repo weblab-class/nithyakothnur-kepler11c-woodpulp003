@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { CTX } from "../context/Store";
 import { Envelope } from "tone";
-import EnvelopeGraph from "../../modules/ADSR";
 
 import EnvelopeGraph from "../../modules/ADSR";
 
