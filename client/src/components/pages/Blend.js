@@ -17,7 +17,7 @@ function Blend() {
           <ADSR />
           <Filter />
         </div>
-        <div class="px-40 py-10 absolute bottom-0 center-0">
+        <div class="relative bottom-0 center-0">
           <Keyboard />
         </div>
       </div>

@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { CTX } from "../context/Store";
 
+import EnvelopeGraph from "../../modules/ADSR";
+
 const ADSR = () => {
   const [appState, updateState] = useContext(CTX);
   let { attack, decay, sustain, release } = appState.envelope;
@@ -29,6 +31,9 @@ const ADSR = () => {
         <h3>release</h3>
         <input value={release} type="range" id="release" onChange={change} max="3" step="0.02" />
       </div>
+      {/* <div> */}
+      <EnvelopeGraph a={attack} d={decay} s={sustain} r={release} />
+      {/* </div> */}
     </div>
   );
 };
