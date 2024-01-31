@@ -23,6 +23,7 @@ import { get, post } from "../utilities";
  */
 const App = () => {
   const [userId, setUserId] = useState(undefined);
+  const [decodedName, setDecodedName] = useState("");
 
   useEffect(() => {
     get("/api/whoami").then((user) => {
@@ -36,6 +37,7 @@ const App = () => {
   const handleLogin = (credentialResponse) => {
     const userToken = credentialResponse.credential;
     const decodedCredential = jwt_decode(userToken);
+    setDecodedName(decodedCredential.name);
     console.log(`Logged in as ${decodedCredential.name}`);
     post("/api/login", { token: userToken }).then((user) => {
       setUserId(user._id);
@@ -60,6 +62,7 @@ const App = () => {
           {/* <Route path="/profile" element={<Profile />} /> */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+
 
         {/* <div>
         <Routes> */}
