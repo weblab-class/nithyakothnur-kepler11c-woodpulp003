@@ -64,31 +64,6 @@ const Home = (props) => {
             cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
           </p>
         </div>
-        <div class="divide-y divide-gray-200 rounded-lg border border-gray-200 shadow-sm">
-          <img src="./images/happycow.jpeg" />
-          <div class="p-6">
-            <Link to="/play" className="NavBar-link main-title">
-              Play
-            </Link>
-          </div>{" "}
-          <p class="text-1xl font-extrabold text-gray-500">
-            Enjoy pre-set waveforms or your own saved sounds to play music on the piano. "Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-            est laborum."
-          </p>{" "}
-          <p class="text-1xl font-extrabold text-gray-500">
-            Mix together different types of waveforms to create your own sounds. "Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-          </p>
-        </div>
       </div>
     </body>
   );

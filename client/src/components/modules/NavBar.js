@@ -15,30 +15,36 @@ const GOOGLE_CLIENT_ID = "797662258474-8kbeajde3f0trr5kbg77tsa5l0abv1o6.apps.goo
 
 const NavBar = (props) => {
   return (
-    <nav class="flex space-x-10 hidden md:flex-1 md:flex md:items-center md:justify-between">
+    <nav class="py-2 border-2 border-blue-900 rounded-full m-8">
       {/* <div className="NavBar-title u-inlineBlock">Catbook</div> */}
-      <div class="flex">
-        <div class="flex items-center inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-          <Link to="/" className="NavBar-link">
+      <div class="flex flex-row items-center justify-between">
+        <div class="flex space-x-4 items-center inline-flex items-center text-base font-medium">
+          <Link
+            to="/"
+            class="px-4 text-2xl hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
             Home
           </Link>
-          <Link to="/learn" className="NavBar-link">
+          <Link
+            to="/learn"
+            class="hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
             Learn
           </Link>
-          <Link to="/blend" className="NavBar-link">
+          <Link
+            to="/blend"
+            class="hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
             Blend
-          </Link>
-          <Link to="/play" className="NavBar-link">
-            Play
           </Link>
         </div>
 
-        <div>
+        <div class="px-20">
           <>
             {props.userId ? <div className="name">Welcome {props.decodedName}!</div> : <div> </div>}
           </>
           <div>
-            <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID} className="Navbar-login">
+            <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID} class="-inset-x-2">
               {props.userId ? (
                 <button
                   onClick={() => {
