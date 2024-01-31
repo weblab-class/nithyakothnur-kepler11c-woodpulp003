@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SingleWave from "./SingleWave";
-import "./WaveCard.css"
+import "./WaveCard.css";
 
 import { get } from "../../utilities";
 
@@ -13,7 +13,7 @@ import { get } from "../../utilities";
  * @param {string} waveId of the wave
  * @param {string} wave type of wave
  * @param {number} attack
- * @param {number} delay
+ * @param {number} decay
  * @param {number} sustain
  * @param {number} release
  * @param {number} unisonVoice

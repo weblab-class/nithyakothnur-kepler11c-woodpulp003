@@ -49,10 +49,21 @@ function Blend(props) {
       <ADSR />
       <Filter />
       <Keyboard />
-      <NewWave addNewWave={addNewWave} userId={props.userId} />
+      <NewWave
+        addNewWave={addNewWave}
+        userId={props.userId}
+        wave={appState.osc1Settings.type}
+        attack={appState.envelope.attack}
+        decay={appState.envelope.decay}
+        sustain={appState.envelope.sustain}
+        release={appState.envelope.release}
+        filterCutoff={appState.filterSettings.frequency}
+        filterQ={appState.filterSettings.Q}
+        filterType={appState.filterSettings.type}
+      />
       {wavesList}
 
-      {console.log(appState.envelope.attack)}
+      {console.log(appState.envelope.decay)}
     </div>
   );
 }

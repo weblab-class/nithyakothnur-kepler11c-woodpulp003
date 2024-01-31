@@ -11,7 +11,7 @@ import "./SingleWave.css";
  * @param {string} waveId of the wave
  * @param {string} wave type of wave
  * @param {number} attack
- * @param {number} delay
+ * @param {number} decay
  * @param {number} sustain
  * @param {number} release
  * @param {number} unisonVoice

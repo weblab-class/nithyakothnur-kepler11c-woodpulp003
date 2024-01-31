@@ -5,7 +5,7 @@ const WaveSchema = new mongoose.Schema({
   waveId: String,
   wave: String,
   attack: Number,
-  delay: Number,
+  decay: Number,
   sustain: Number,
   release: Number,
   unisonVoice: Number,

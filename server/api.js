@@ -53,7 +53,14 @@ router.post("/wave", (req, res) => {
   const newWave = new Wave({
     userId: req.body.userId,
     waveId: req.body.waveId,
+    wave: req.body.wave,
     attack: req.body.attack,
+    decay: req.body.decay,
+    sustain: req.body.sustain,
+    release: req.body.release,
+    filterCutoff: req.body.filterCutoff,
+    filterQ: req.body.filterQ,
+    filterType: req.body.filterType,
   });
 
   newWave.save().then((wave) => res.send(wave));
