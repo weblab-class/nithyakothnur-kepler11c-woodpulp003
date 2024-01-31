@@ -5,7 +5,7 @@ const WaveSchema = new mongoose.Schema({
   waveId: String,
   wave: String,
   attack: Number,
-  delay: Number,
+  decay: Number,
   sustain: Number,
   release: Number,
   unisonVoice: Number,
@@ -16,4 +16,5 @@ const WaveSchema = new mongoose.Schema({
 });
 
 // compile model from schema
-module.exports = mongoose.model("wave", WaveSchema);
+const WaveModel = mongoose.model("wave", WaveSchema); 
+module.exports = WaveModel

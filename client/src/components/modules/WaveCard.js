@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react";
 import SingleWave from "./SingleWave";
+import "./WaveCard.css";
 
 import { get } from "../../utilities";
 
 /**
- * Card is a component for displaying content like stories
+ * Card is a component for displaying content like waves
  *
  * Proptypes
  * @param {string} _id for the user
+ * @param {string} userId
  * @param {string} waveId of the wave
  * @param {string} wave type of wave
  * @param {number} attack
- * @param {number} delay
+ * @param {number} decay
  * @param {number} sustain
  * @param {number} release
  * @param {number} unisonVoice
@@ -22,9 +24,22 @@ import { get } from "../../utilities";
  */
 
 const WaveCard = (props) => {
+  const [chosenWave, setChosenWave] = useState("");
   return (
     <div className="Card-container">
-      <SingleWave _id={props._id} waveId={props.waveId} attack={props.attack} />
+      <SingleWave
+        _id={props._id}
+        userId={props.userId}
+        waveId={props.waveId}
+        wave={props.wave}
+        attack={props.attack}
+        decay={props.decay}
+        sustain={props.sustain}
+        release={props.release}
+        filterCutoff={props.filterCutoff}
+        filterQ={props.filterQ}
+        filterType={props.filterType}
+      />
     </div>
   );
 };
